@@ -1,0 +1,20 @@
+
+1. c == a + b || !flag
+
+• 14 == 15 || !true → false || false → false (0)
+• None (The entire expression must be checked).
+
+2. a != 7 && flag || c >= 6
+
+ (6 != 7 && true) || ... → (true && true) || ... → true (1)
+ c >= 6 (Skipped because the left side of the || is already true).
+
+3. !(b <= 12) && a % 2 == 0
+
+• !(9 <= 12) && ... → !(true) && ... → false && ... → false (0)
+• a % 2 == 0 (Skipped because the left side of the && is already false).
+
+4. !(a > 5 || c < a + b)
+
+• !(6 > 5 || ...)  → !(true || ...)  → !(true) → false (0)
+• c < a + b (Skipped because the left side inside the || is already true). 
